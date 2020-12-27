@@ -22,3 +22,15 @@ public int[] biggerTwo(int[] a, int[] b)
   return s1 >= s2 ? a:b;
 }
 
+public int[] makeMiddle(int[] nums) {
+  int l=nums.length-1;
+  int mid1=l/2, mid2=l/2+1;
+  return new int []{nums[mid1],nums[mid2]};
+}
+
+public int[] plusTwo(int[] a, int[] b) {
+  int []temp={a[0],a[1],b[0],b[1]};
+  return temp;
+}
+
+
