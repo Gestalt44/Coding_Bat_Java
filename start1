@@ -33,4 +33,73 @@ public int[] plusTwo(int[] a, int[] b) {
   return temp;
 }
 
+public int[] swapEnds(int[] nums) {
+  int l=nums.length-1,temp;
+  temp=nums[0];
+  nums[0]=nums[l];
+  nums[l]=temp;
+  return nums;
+}
+
+public int[] midThree(int[] nums) {
+  int l=nums.length;
+  return new int[]{nums[l/2-1],nums[l/2],nums[l/2+1]};
+}
+
+public int maxTriple(int[] nums) {
+  int l=nums.length;
+  int first=nums[0];
+  int mid=nums[l/2];
+  int last=nums[l-1];
+  int large=first;
+  if(large<mid)
+  large=mid;
+  if(large<last)
+  large=last;
+  return large;
+}
+
+public int[] frontPiece(int[] nums) {
+  if(nums.length<2)
+  return nums;
+  
+  return new int[]{nums[0],nums[1]};
+}
+
+
+
+public boolean unlucky1(int[] nums) {
+  int l=nums.length;
+  if(l<2)
+  return false;
+  if(nums[0]==1 && nums[1]==3 || nums[l-2]==1 && nums[l-1]==3 || (l>3 && nums[1]==1 && nums[2]==3))  // still works if l>3 is removed due to lazy evaluation 
+                                                                                                     //but indexoutofboundsexception for an input like 1,1
+  return true;
+  return false;
+  
+}
+
+public int[] make2(int[] a, int[] b) {
+  int l_of_a=a.length;
+  int l_of_b=b.length;
+  if(l_of_a>=2) 
+        return new int[]{a[0],a[1]};           
+  if(l_of_a==1 && l_of_b!=0)
+           return new int[]{a[0],b[0]};                 //if flow of execution arrives here, it means that a has either 1 or 0 elements
+  return b;                                             // arriving here means a is empty
+}
+
+public int[] front11(int[] a, int[] b) {
+  int l1=a.length;
+  int l2=b.length;
+  if(l1!=0 && l2!=0)
+  return new int[]{a[0],b[0]};
+  if(l1==0 && l2!=0)
+  return new int[]{b[0]};
+  if(l2==0 && l1!=0)
+  return new int[]{a[0]};
+  return a;
+  
+}
+
 
